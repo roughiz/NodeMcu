@@ -1,0 +1,10 @@
+sv = net.createServer(net.TCP,5)
+-- server listens on 80, if data received, print data to console and send "hello world" back to caller
+sv:listen(80, function(c)
+  k=adc.read(0) 
+  c:on("receive", function(c, pl) 
+    print("my val:",k)
+    print(pl)
+  end)
+  c:send("val:",k)
+end)
