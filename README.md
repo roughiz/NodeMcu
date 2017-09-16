@@ -6,19 +6,21 @@ Il y'a aussi deux outils esptool et luatool qui permet de flasher leNodeMcu ou a
 ## Explication : 
 	
 
-A chaque fois pour reset le NodeMcu, il faudra apres l'avoir brancher utiiser l'utilitaire screen qui permet d'envoyer des commandes au NodeMcu 
+Pour reset le NodeMcu, il faudra apres l'avoir brancher utiiser l'utilitaire screen qui permet d'envoyer des commandes au NodeMcu 
 
 Comme on l'a flashé avec le firmware Lua, on va pouvoir communiquer avec lui avec des commandes Lua 
 
-pour se conncter au device qui est en general à /dev/ttyUSB....., on lance la commande(on communique avec ce evice via le baud 9600 )  :
+Pour se conncter au device qui est en general à /dev/ttyUSB....., on lance la commande(on communique avec ce evice via le baud 9600 )  :
 
+```
 $ screen /dev/ttyUSB.... 9600
+```
 
-pour faire un reset : node.restart()
+Pour faire un reset : node.restart()
 
-pour formater la carte memoire sd integrer : file.format()
+Pour formater la carte memoire sd integrer : file.format()
 
-on peut désormais lancer des commandes lua( comme avec l'intérpreteur python)
+On peut désormais lancer des commandes lua( comme avec l'intérpreteur python)
 
 ***
 
@@ -28,22 +30,26 @@ Note: on doit se deconnecter de screen pour pouvoir faire cela !!!!!!!!!!!!
 
 ### commande : 
 
+```
 $ python luatool.py --port /dev/ttyUSB0 --src init.lua --dest init.lua --verbose
 $ python luatool.py --port /dev/ttyUSB0 --src main.lua --dest main.lua --verbose
+```
 
 
 Ou bien
 
+```
 $ nodemcu-tool upload init.lua 
-
+```
 
 ### <span style="color:red"> Attention </span>
 
 S'il ya plus moyen de faire quoi que se soit avec le nodemc il faut le re flasher à noueau avec le firmware :
-  
+ 
+``` 
 $ python esptool/esptool  erase_flash
 $ python esptool/esptool.py  --port /dev/ttyUSB0 write_flash 0x00000 nodemcu_float_0.9.6-dev_20150704.bin
-
+```
 
 ***
 
