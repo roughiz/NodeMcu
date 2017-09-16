@@ -1,7 +1,7 @@
 # Présentation
 
 Dans ce répo on peut trouver quelques dossier avec des idées d'utilisation de notre NodeMcu (Joystick, jeu de lumière, boutons).
-Il y'a aussi deux outils esptool et luatool qui permet de flasher leNodeMcu ou aussi pouvoir envoyer nos fichiers sur ledevice etc ...
+Il y'a aussi deux outils esptool et luatool qui permet de flasher leNodeMcu ou aussi pouvoir exporter nos fichiers dans le device etc ...
 
 ## Explication : 
 	
