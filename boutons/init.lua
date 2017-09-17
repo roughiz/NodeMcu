@@ -11,7 +11,7 @@ gpio.mode(outpinbas,gpio.OUTPUT)
 gpio.mode(outpingauche,gpio.OUTPUT) 
 gpio.mode(outpindroit,gpio.OUTPUT)
 wifi.setmode(wifi.STATION)
-wifi.sta.config("Yobadi","ZakLauIly162530@@@@")
+wifi.sta.config("Yobadi","")
 function ready()
 	for i=1,10 do 
 		gpio.write(outpinhaut,gpio.HIGH)

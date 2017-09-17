@@ -1,6 +1,6 @@
 wifi.setmode(wifi.STATION)
 wifi.sta.autoconnect(1)
-wifi.sta.config("Yobadi","ZakLauIly162530@@@@")
+wifi.sta.config("Yobadi","")
 ipserveur=""
 dnsserveur="roughiz.no-ip.org"
 connected=false
@@ -53,7 +53,5 @@ function playwifi()
     beep(buzzerPin, "aS", 1000)
     beep(buzzerPin, "aS", 1000)
 end
-getDNSAndIp()
-dofile("main.lua")
 getDNSAndIp()
 dofile("main.lua")
