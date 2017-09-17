@@ -1,5 +1,5 @@
 node.setcpufreq(node.CPU160MHZ)
-ipserveur=""
+ipserveur="192.168.43.99"
 dnsserveur="roughiz.no-ip.org"
 connected=false
 outpinhaut =6 
@@ -11,7 +11,7 @@ gpio.mode(outpinbas,gpio.OUTPUT)
 gpio.mode(outpingauche,gpio.OUTPUT) 
 gpio.mode(outpindroit,gpio.OUTPUT)
 wifi.setmode(wifi.STATION)
-wifi.sta.config("Yobadi","")
+wifi.sta.config("Yobadi","zakaria0000")
 function ready()
 	for i=1,10 do 
 		gpio.write(outpinhaut,gpio.HIGH)
@@ -47,14 +47,7 @@ function ready()
 end
 function getDNSAndIp()
    tmr.alarm(0, 500, 1,function()
-	if ipserveur == "" then
-		print("DNS .. waiting") 
-     		net.dns.resolve(dnsserveur, function(sk, ip)
-   		 if (ip ~= nil) then 
-	    		ipserveur=ip
-    	 	 end
-        	end)
-	end  
+	
 	if wifi.sta.getip() == nil then
       		print("Connecting to router...\n")
 	else

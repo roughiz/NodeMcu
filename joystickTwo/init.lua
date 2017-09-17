@@ -1,8 +1,8 @@
 wifi.setmode(wifi.STATION)
 wifi.sta.autoconnect(1)
-wifi.sta.config("Yobadi","")
-ipserveur=""
-dnsserveur="roughiz.no-ip.org"
+wifi.sta.config("Yobadi","zakaria0000")
+ipserveur="192.168.43.99"
+dnsserveur="google.fr"
 connected=false
 buzzerPin = 5
 gpio.mode(buzzerPin, gpio.OUTPUT)
@@ -12,14 +12,6 @@ tones["cS"] = 523
 tones["eS"] = 659
 function getDNSAndIp()
      tmr.alarm(0, 500, 1,function()
-	if ipserveur == "" then
-		print("DNS .. waiting") 
-     		net.dns.resolve(dnsserveur, function(sk, ip)
-   		 if (ip ~= nil) then 
-	    		ipserveur=ip
-    	 	 end
-        	end)
-	end  
 	if wifi.sta.getip() == nil then
       		print("Connecting to router...\n")
 	else
