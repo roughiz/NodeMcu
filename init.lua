@@ -1,5 +1,5 @@
 wifi.setmode(wifi.STATION)
-wifi.sta.config("Yobadi","ZakLauIly162530@@@@")
+wifi.sta.config("Yobadi","zakaria0000")
 print(wifi.sta.getip())
 led1 = 0
 gpio.mode(led1, gpio.OUTPUT)
